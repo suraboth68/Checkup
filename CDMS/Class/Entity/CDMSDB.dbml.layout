@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 28.5, 32.375" name="CDMSDB">
+  <DataContextMoniker Name="/CDMSDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="301f19f6-2a69-4a7d-a1f9-62fd08c562a7" absoluteBounds="17.75, 9.875, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/CDMSDBDataContext/ThailandAmphur" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31ce61a3-6092-43fc-aa26-d4fa76e0ff06" absoluteBounds="17.765, 10.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d24fbff1-46d5-4c29-bf67-fc8db726b2da" absoluteBounds="20.5, 9.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/CDMSDBDataContext/ThailandDistrict" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0555137-e0f3-438f-85db-a9ae0e51c5a1" absoluteBounds="20.515, 10.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd5b5819-3668-4b83-8ee1-f47bc71dc4aa" absoluteBounds="15, 9.875, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/CDMSDBDataContext/ThailandProvince" />
+      <nestedChildShapes>
+        <elementListCompartment Id="384b97eb-a8b0-4e98-9b91-86681892e330" absoluteBounds="15.015, 10.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29462c4a-15bd-4340-b095-11a2c86dd95a" absoluteBounds="12.25, 10, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/CDMSDBDataContext/ThailandRegion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fb1d90b-45f9-490f-a242-385b7cc3ebc8" absoluteBounds="12.265, 10.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(19.75 : 10.7604484049479); (20.5 : 10.7604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandAmphur/ThailandAmphur_ThailandDistrict" />
+      <nodes>
+        <classShapeMoniker Id="301f19f6-2a69-4a7d-a1f9-62fd08c562a7" />
+        <classShapeMoniker Id="d24fbff1-46d5-4c29-bf67-fc8db726b2da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 10.7604484049479); (17.75 : 10.7604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandProvince/ThailandProvince_ThailandAmphur" />
+      <nodes>
+        <classShapeMoniker Id="bd5b5819-3668-4b83-8ee1-f47bc71dc4aa" />
+        <classShapeMoniker Id="301f19f6-2a69-4a7d-a1f9-62fd08c562a7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 10.6931469726562); (15 : 10.6931469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandRegion/ThailandRegion_ThailandProvince" />
+      <nodes>
+        <classShapeMoniker Id="29462c4a-15bd-4340-b095-11a2c86dd95a" />
+        <classShapeMoniker Id="bd5b5819-3668-4b83-8ee1-f47bc71dc4aa" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="16376495-bdba-4e6a-9591-b61c16ca3337" absoluteBounds="14.875, 20.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CDMSDBDataContext/EmployeeTitle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15071298-7fa5-43b2-8c7a-2f2f52e593c8" absoluteBounds="14.89, 20.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a7d05a2-8826-4d44-b2e9-01bda5843d04" absoluteBounds="3.375, 16.75, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/CDMSDBDataContext/Branch" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7dc6744c-3337-43aa-82ed-20d069a6d39a" absoluteBounds="3.39, 17.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ef33347-c59c-40d2-9e27-e0cf2e392ec3" absoluteBounds="6.75, 15, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/CDMSDBDataContext/Dept" />
+      <nestedChildShapes>
+        <elementListCompartment Id="442f150a-cbad-4ce2-b49f-983df004588b" absoluteBounds="6.765, 15.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 17.5296541341146); (6.75 : 17.5296541341146)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Branch/Branch_Dept" />
+      <nodes>
+        <classShapeMoniker Id="6a7d05a2-8826-4d44-b2e9-01bda5843d04" />
+        <classShapeMoniker Id="2ef33347-c59c-40d2-9e27-e0cf2e392ec3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="83f6cfcc-a28d-4958-8c43-1a24b1053b42" absoluteBounds="1.5, 9.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/CDMSDBDataContext/Factory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00ce88be-93e1-4ff8-aec2-653dc0a120ee" absoluteBounds="1.5150000000000001, 10.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.921877 : 12.3574039713542); (2.921877 : 18.2123527018229); (3.375 : 18.2123527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Factory/Factory_Branch" />
+      <nodes>
+        <classShapeMoniker Id="83f6cfcc-a28d-4958-8c43-1a24b1053b42" />
+        <classShapeMoniker Id="6a7d05a2-8826-4d44-b2e9-01bda5843d04" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 11.8255572906069); (7.343748 : 11.8255572906069); (7.343748 : 15)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Factory/Factory_Dept" />
+      <nodes>
+        <classShapeMoniker Id="83f6cfcc-a28d-4958-8c43-1a24b1053b42" />
+        <classShapeMoniker Id="2ef33347-c59c-40d2-9e27-e0cf2e392ec3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4a165ec7-71a3-4c49-b393-1d8ba44804dd" absoluteBounds="8.625, 10.625, 2, 3.1170068359375">
+      <DataClassMoniker Name="/CDMSDBDataContext/Section" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f655bed9-7616-471e-b2bd-358ee8d8315c" absoluteBounds="8.64, 11.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.58344832416845 : 13.7420068359375); (9.58344832416845 : 16.2960745670573); (8.75 : 16.2960745670573)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Section/Section_Dept" />
+      <nodes>
+        <classShapeMoniker Id="4a165ec7-71a3-4c49-b393-1d8ba44804dd" />
+        <classShapeMoniker Id="2ef33347-c59c-40d2-9e27-e0cf2e392ec3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.46875 : 16.75); (4.46875 : 13.0809554036458); (7.26041466666667 : 13.0809554036458 : JumpStart); (7.42708133333333 : 13.0809554036458 : JumpEnd); (8.625 : 13.0809554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Branch/Branch_Section" />
+      <nodes>
+        <classShapeMoniker Id="6a7d05a2-8826-4d44-b2e9-01bda5843d04" />
+        <classShapeMoniker Id="4a165ec7-71a3-4c49-b393-1d8ba44804dd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 11.1627786453034); (8.625 : 11.1627786453034)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Factory/Factory_Section" />
+      <nodes>
+        <classShapeMoniker Id="83f6cfcc-a28d-4958-8c43-1a24b1053b42" />
+        <classShapeMoniker Id="4a165ec7-71a3-4c49-b393-1d8ba44804dd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d90accd8-1fc7-4387-b34d-9c78d47b8692" absoluteBounds="19.25, 13, 2.25, 3.8862125651041666">
+      <DataClassMoniker Name="/CDMSDBDataContext/AddressByContact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="261bb13a-a3e2-4923-901a-283a2af27329" absoluteBounds="19.265, 13.46, 2.2199999999999998, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(19.5 : 11.6458968098958); (19.5 : 13)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandAmphur/ThailandAmphur_AddressByContact" />
+      <nodes>
+        <classShapeMoniker Id="301f19f6-2a69-4a7d-a1f9-62fd08c562a7" />
+        <classShapeMoniker Id="d90accd8-1fc7-4387-b34d-9c78d47b8692" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21 : 11.7131982421875); (21 : 13)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandDistrict/ThailandDistrict_AddressByContact" />
+      <nodes>
+        <classShapeMoniker Id="d24fbff1-46d5-4c29-bf67-fc8db726b2da" />
+        <classShapeMoniker Id="d90accd8-1fc7-4387-b34d-9c78d47b8692" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.3629733359021 : 11.6458968098958); (16.3629733359021 : 14.1910020515951); (18.7291666666667 : 14.1910020515951 : JumpStart); (18.8958333333333 : 14.1910020515951 : JumpEnd); (19.25 : 14.1910020515951)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandProvince/ThailandProvince_AddressByContact" />
+      <nodes>
+        <classShapeMoniker Id="bd5b5819-3668-4b83-8ee1-f47bc71dc4aa" />
+        <classShapeMoniker Id="d90accd8-1fc7-4387-b34d-9c78d47b8692" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b8ca38e7-24fa-4c2e-b69d-aaeea170c2b5" absoluteBounds="24.5, 14.75, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/CDMSDBDataContext/AddressByCompany" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5680c837-8dc8-4467-9612-3453fb497543" absoluteBounds="24.515, 15.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(18.8125 : 11.6458968098958); (18.8125 : 18.7203597005208); (24.5 : 18.7203597005208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandAmphur/ThailandAmphur_AddressByCompany" />
+      <nodes>
+        <classShapeMoniker Id="301f19f6-2a69-4a7d-a1f9-62fd08c562a7" />
+        <classShapeMoniker Id="b8ca38e7-24fa-4c2e-b69d-aaeea170c2b5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.5 : 11.2536511816406); (25.5 : 11.2536511816406); (25.5 : 14.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandDistrict/ThailandDistrict_AddressByCompany" />
+      <nodes>
+        <classShapeMoniker Id="d24fbff1-46d5-4c29-bf67-fc8db726b2da" />
+        <classShapeMoniker Id="b8ca38e7-24fa-4c2e-b69d-aaeea170c2b5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17 : 11.6458968098958); (17.375 : 12.0208968098958); (18.7291666666667 : 12.0208968098958 : JumpStart); (18.8958333333333 : 12.0208968098958 : JumpEnd); (19.4166666666667 : 12.0208968098958 : JumpStart); (19.5833333333333 : 12.0208968098958 : JumpEnd); (25.5 : 12.0208968098958); (25.5 : 14.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandProvince/ThailandProvince_AddressByCompany" />
+      <nodes>
+        <classShapeMoniker Id="bd5b5819-3668-4b83-8ee1-f47bc71dc4aa" />
+        <classShapeMoniker Id="b8ca38e7-24fa-4c2e-b69d-aaeea170c2b5" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="7bcd1ba7-db27-442b-bf7e-d0862e175b22" absoluteBounds="26.25, 5.5, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/CDMSDBDataContext/AddressByIDCard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4664c4b-349c-472b-a4ed-fdab3ee4a118" absoluteBounds="26.265, 5.96, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(18.75 : 9.875); (18.75 : 8.64016983275351); (26.25 : 8.64016983275351)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandAmphur/ThailandAmphur_AddressByIDCard" />
+      <nodes>
+        <classShapeMoniker Id="301f19f6-2a69-4a7d-a1f9-62fd08c562a7" />
+        <classShapeMoniker Id="7bcd1ba7-db27-442b-bf7e-d0862e175b22" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.5 : 10.7315991210937); (27.2031225 : 10.7315991210937); (27.2031225 : 9.38621256510417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandDistrict/ThailandDistrict_AddressByIDCard" />
+      <nodes>
+        <classShapeMoniker Id="d24fbff1-46d5-4c29-bf67-fc8db726b2da" />
+        <classShapeMoniker Id="7bcd1ba7-db27-442b-bf7e-d0862e175b22" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16 : 9.875); (16 : 7.78902858869234); (26.25 : 7.78902858869234)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/ThailandProvince/ThailandProvince_AddressByIDCard" />
+      <nodes>
+        <classShapeMoniker Id="bd5b5819-3668-4b83-8ee1-f47bc71dc4aa" />
+        <classShapeMoniker Id="7bcd1ba7-db27-442b-bf7e-d0862e175b22" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c66abd8b-befe-4514-a226-f597d754aa97" absoluteBounds="17.375, 20.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CDMSDBDataContext/Gender" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0171c170-0db3-4a32-b734-bfa9bd25b505" absoluteBounds="17.39, 20.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" absoluteBounds="10.75, 18, 2.125, 5.8092268880208326">
+      <DataClassMoniker Name="/CDMSDBDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26297472-1ebf-45fb-80d0-5dd7d8e96f7a" absoluteBounds="10.765, 18.46, 2.0949999999999998, 5.249226888020833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(25.5 : 18.8285139973958); (25.5 : 19.3226680797178); (12.875 : 19.3226680797178)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/AddressByCompany/AddressByCompany_Employee" />
+      <nodes>
+        <classShapeMoniker Id="b8ca38e7-24fa-4c2e-b69d-aaeea170c2b5" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.46875 : 16.8862125651042); (20.46875 : 19.7863365398589); (12.875 : 19.7863365398589)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/AddressByContact/AddressByContact_Employee" />
+      <nodes>
+        <classShapeMoniker Id="d90accd8-1fc7-4387-b34d-9c78d47b8692" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(27.75781375 : 9.38621256510417); (27.75781375 : 22.5344962565104); (12.875 : 22.5344962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/AddressByIDCard/AddressByIDCard_Employee" />
+      <nodes>
+        <classShapeMoniker Id="7bcd1ba7-db27-442b-bf7e-d0862e175b22" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 19.0232568359375); (10.75 : 19.0232568359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Branch/Branch_Employee" />
+      <nodes>
+        <classShapeMoniker Id="6a7d05a2-8826-4d44-b2e9-01bda5843d04" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 17.1792892835287); (11.4736202361742 : 17.1792892835287); (11.4736202361742 : 18)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Dept/Dept_Employee" />
+      <nodes>
+        <classShapeMoniker Id="2ef33347-c59c-40d2-9e27-e0cf2e392ec3" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.875 : 20.8469962565104); (12.875 : 20.8469962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/EmployeeTitle/EmployeeTitle_Employee" />
+      <nodes>
+        <classShapeMoniker Id="16376495-bdba-4e6a-9591-b61c16ca3337" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.179686 : 12.3574039713542); (2.179686 : 21.6103552539062); (10.75 : 21.6103552539062)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Factory/Factory_Employee" />
+      <nodes>
+        <classShapeMoniker Id="83f6cfcc-a28d-4958-8c43-1a24b1053b42" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.40625 : 21.4439925130208); (18.40625 : 21.9579923847656); (12.875 : 21.9579923847656)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Gender/Gender_Employee" />
+      <nodes>
+        <classShapeMoniker Id="c66abd8b-befe-4514-a226-f597d754aa97" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.625 : 12.1835034179687); (12.10932850536 : 12.1835034179687); (12.10932850536 : 18)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Section/Section_Employee" />
+      <nodes>
+        <classShapeMoniker Id="4a165ec7-71a3-4c49-b393-1d8ba44804dd" />
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="996ff98b-0b2c-4836-8b83-d963777c8488" absoluteBounds="8.5, 25, 2, 3.6939111328125005">
+      <DataClassMoniker Name="/CDMSDBDataContext/HistoryWork" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb4ce8f0-3f3d-4591-9ff4-8abc4bc2d8bf" absoluteBounds="8.515, 25.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25c932da-4ae7-4fd2-92d7-c8b213a4b369" absoluteBounds="5.625, 25, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/CDMSDBDataContext/HistoryWork_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b42b81f-6d76-4b77-aa7c-0bf7ddbe6cbf" absoluteBounds="5.6400000000000006, 25.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a74fa37-a74f-447d-99aa-d4c2ab87fae7" absoluteBounds="15.875, 25.125, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/CDMSDBDataContext/HistorySickness_Family" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee2f7dbe-57c3-4244-b7b2-6c2d04ea36ed" absoluteBounds="15.89, 25.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f6721fa-0acd-43a2-8054-9005fcca9a8c" absoluteBounds="15.875, 28.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/CDMSDBDataContext/HistorySickness_SickInjury" />
+      <nestedChildShapes>
+        <elementListCompartment Id="76295705-1fc0-4fab-9fec-920271b78e77" absoluteBounds="15.89, 29.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.2499975 : 23.8092268880208); (11.2499975 : 26.8469555664063); (10.5 : 26.8469555664063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Employee/Employee_HistoryWork" />
+      <nodes>
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+        <classShapeMoniker Id="996ff98b-0b2c-4836-8b83-d963777c8488" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 26.4623527018229); (7.625 : 26.4623527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/HistoryWork/HistoryWork_HistoryWork_Detail" />
+      <nodes>
+        <classShapeMoniker Id="996ff98b-0b2c-4836-8b83-d963777c8488" />
+        <classShapeMoniker Id="25c932da-4ae7-4fd2-92d7-c8b213a4b369" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3632c655-f4d4-400d-a60c-938f88215ad6" absoluteBounds="12.875, 25.125, 2, 6.9630354817708326">
+      <DataClassMoniker Name="/CDMSDBDataContext/HistorySickness" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf734c5d-503f-4204-b331-770b2b13a39d" absoluteBounds="12.89, 25.585, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.875 : 26.5873527018229); (15.875 : 26.5873527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/HistorySickness/HistorySickness_HistorySickness_Family" />
+      <nodes>
+        <classShapeMoniker Id="3632c655-f4d4-400d-a60c-938f88215ad6" />
+        <classShapeMoniker Id="7a74fa37-a74f-447d-99aa-d4c2ab87fae7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.875 : 30.2123527018229); (15.875 : 30.2123527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/HistorySickness/HistorySickness_HistorySickness_SickInjury" />
+      <nodes>
+        <classShapeMoniker Id="3632c655-f4d4-400d-a60c-938f88215ad6" />
+        <classShapeMoniker Id="7f6721fa-0acd-43a2-8054-9005fcca9a8c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.06250125 : 23.8092268880208); (12.06250125 : 29.4674955240886); (12.875 : 29.4674955240886)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CDMSDBDataContext/Employee/Employee_HistorySickness" />
+      <nodes>
+        <classShapeMoniker Id="3bf870fc-fd03-4204-bbdc-40315067fb5f" />
+        <classShapeMoniker Id="3632c655-f4d4-400d-a60c-938f88215ad6" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

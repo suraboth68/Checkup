@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CHECKUP" Class="CDMSDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=10.10.10.4;Initial Catalog=CHECKUP;Persist Security Info=True;User ID=sqlserver" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ThailandAmphur" Member="ThailandAmphurs">
+    <Type Name="ThailandAmphur">
+      <Column Name="Amp_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Amp_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Amp_NameTH" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Amp_NameEN" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Prov_Key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ThailandAmphur_ThailandDistrict" Member="ThailandDistricts" ThisKey="Amp_Key" OtherKey="Amp_Key" Type="ThailandDistrict" />
+      <Association Name="ThailandAmphur_AddressByContact" Member="AddressByContacts" ThisKey="Amp_Key" OtherKey="AddrCont_Address_Amphur" Type="AddressByContact" />
+      <Association Name="ThailandAmphur_AddressByCompany" Member="AddressByCompanies" ThisKey="Amp_Key" OtherKey="AddrCom_Address_Amphur" Type="AddressByCompany" />
+      <Association Name="ThailandAmphur_AddressByIDCard" Member="AddressByIDCards" ThisKey="Amp_Key" OtherKey="AddrIDCard_Address_Amphur" Type="AddressByIDCard" />
+      <Association Name="ThailandProvince_ThailandAmphur" Member="ThailandProvince" ThisKey="Prov_Key" OtherKey="Prov_Key" Type="ThailandProvince" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThailandDistrict" Member="ThailandDistricts">
+    <Type Name="ThailandDistrict">
+      <Column Name="Dis_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dis_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dis_Zip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dis_NameTH" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Dis_NameEN" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Amp_Key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ThailandDistrict_AddressByContact" Member="AddressByContacts" ThisKey="Dis_Key" OtherKey="AddrCont_Address_District" Type="AddressByContact" />
+      <Association Name="ThailandDistrict_AddressByCompany" Member="AddressByCompanies" ThisKey="Dis_Key" OtherKey="AddrCom_Address_District" Type="AddressByCompany" />
+      <Association Name="ThailandDistrict_AddressByIDCard" Member="AddressByIDCards" ThisKey="Dis_Key" OtherKey="AddrIDCard_Address_District" Type="AddressByIDCard" />
+      <Association Name="ThailandAmphur_ThailandDistrict" Member="ThailandAmphur" ThisKey="Amp_Key" OtherKey="Amp_Key" Type="ThailandAmphur" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThailandProvince" Member="ThailandProvinces">
+    <Type Name="ThailandProvince">
+      <Column Name="Prov_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Prov_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Prov_NameTH" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Prov_NameEN" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Reg_Key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ThailandProvince_ThailandAmphur" Member="ThailandAmphurs" ThisKey="Prov_Key" OtherKey="Prov_Key" Type="ThailandAmphur" />
+      <Association Name="ThailandProvince_AddressByContact" Member="AddressByContacts" ThisKey="Prov_Key" OtherKey="AddrCont_Address_Province" Type="AddressByContact" />
+      <Association Name="ThailandProvince_AddressByCompany" Member="AddressByCompanies" ThisKey="Prov_Key" OtherKey="AddrCom_Address_Province" Type="AddressByCompany" />
+      <Association Name="ThailandProvince_AddressByIDCard" Member="AddressByIDCards" ThisKey="Prov_Key" OtherKey="AddrIDCard_Address_Province" Type="AddressByIDCard" />
+      <Association Name="ThailandRegion_ThailandProvince" Member="ThailandRegion" ThisKey="Reg_Key" OtherKey="Reg_Key" Type="ThailandRegion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThailandRegion" Member="ThailandRegions">
+    <Type Name="ThailandRegion">
+      <Column Name="Reg_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Reg_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reg_Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="ThailandRegion_ThailandProvince" Member="ThailandProvinces" ThisKey="Reg_Key" OtherKey="Reg_Key" Type="ThailandProvince" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmployeeTitle" Member="EmployeeTitles">
+    <Type Name="EmployeeTitle">
+      <Column Name="Title_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="EmployeeTitle_Employee" Member="Employees" ThisKey="Title_Key" OtherKey="Title_Key" Type="Employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Branch" Member="Branches">
+    <Type Name="Branch">
+      <Column Name="Brn_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Brn_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Brn_Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Brn_REM" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fact_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Brn_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Brn_CreateBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Brn_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Brn_ModifyBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Brn_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Brn_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Branch_Dept" Member="Depts" ThisKey="Brn_Key" OtherKey="Brn_Key" Type="Dept" />
+      <Association Name="Branch_Section" Member="Sections" ThisKey="Brn_Key" OtherKey="Brn_Key" Type="Section" />
+      <Association Name="Branch_Employee" Member="Employees" ThisKey="Brn_Key" OtherKey="Brn_Key" Type="Employee" />
+      <Association Name="Factory_Branch" Member="Factory" ThisKey="Fact_Key" OtherKey="Fact_Key" Type="Factory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dept" Member="Depts">
+    <Type Name="Dept">
+      <Column Name="Dpt_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dpt_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dpt_Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Dpt_REM" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fact_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Brn_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sec_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dpt_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Dpt_CreateBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Dpt_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Dpt_ModifyBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Dpt_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dpt_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Dept_Employee" Member="Employees" ThisKey="Dpt_Key" OtherKey="Dept_Key" Type="Employee" />
+      <Association Name="Branch_Dept" Member="Branch" ThisKey="Brn_Key" OtherKey="Brn_Key" Type="Branch" IsForeignKey="true" />
+      <Association Name="Factory_Dept" Member="Factory" ThisKey="Fact_Key" OtherKey="Fact_Key" Type="Factory" IsForeignKey="true" />
+      <Association Name="Section_Dept" Member="Section" ThisKey="Sec_Key" OtherKey="Sec_Key" Type="Section" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Factory" Member="Factories">
+    <Type Name="Factory">
+      <Column Name="Fact_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fact_Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fact_Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fact_REM" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fact_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Fact_CreateBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Fact_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Fact_ModifyBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Fact_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fact_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Factory_Branch" Member="Branches" ThisKey="Fact_Key" OtherKey="Fact_Key" Type="Branch" />
+      <Association Name="Factory_Dept" Member="Depts" ThisKey="Fact_Key" OtherKey="Fact_Key" Type="Dept" />
+      <Association Name="Factory_Section" Member="Sections" ThisKey="Fact_Key" OtherKey="Fact_Key" Type="Section" />
+      <Association Name="Factory_Employee" Member="Employees" ThisKey="Fact_Key" OtherKey="Fact_Key" Type="Employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Section" Member="Sections">
+    <Type Name="Section">
+      <Column Name="Sec_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sec_Code" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sec_Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Sec_REM" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Fact_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Brn_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sec_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Sec_CreateBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Sec_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sec_ModifyBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Sec_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sec_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Section_Dept" Member="Depts" ThisKey="Sec_Key" OtherKey="Sec_Key" Type="Dept" />
+      <Association Name="Section_Employee" Member="Employees" ThisKey="Sec_Key" OtherKey="Sec_Key" Type="Employee" />
+      <Association Name="Branch_Section" Member="Branch" ThisKey="Brn_Key" OtherKey="Brn_Key" Type="Branch" IsForeignKey="true" />
+      <Association Name="Factory_Section" Member="Factory" ThisKey="Fact_Key" OtherKey="Fact_Key" Type="Factory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddressByContact" Member="AddressByContacts">
+    <Type Name="AddressByContact">
+      <Column Name="AddrCont_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AddrCont_Address_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AddrCont_Address_Moo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddrCont_Address_Soi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddrCont_Address_Street" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrCont_Address_District" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCont_Address_Amphur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCont_Address_Province" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCont_Address_ZipCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCont_Telelphone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="AddrCont_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="AddrCont_CreateBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrCont_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddrCont_ModifyBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrCont_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCont_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AddressByContact_Employee" Member="Employees" ThisKey="AddrCont_Key" OtherKey="AddrCont_Key" Type="Employee" />
+      <Association Name="ThailandAmphur_AddressByContact" Member="ThailandAmphur" ThisKey="AddrCont_Address_Amphur" OtherKey="Amp_Key" Type="ThailandAmphur" IsForeignKey="true" />
+      <Association Name="ThailandDistrict_AddressByContact" Member="ThailandDistrict" ThisKey="AddrCont_Address_District" OtherKey="Dis_Key" Type="ThailandDistrict" IsForeignKey="true" />
+      <Association Name="ThailandProvince_AddressByContact" Member="ThailandProvince" ThisKey="AddrCont_Address_Province" OtherKey="Prov_Key" Type="ThailandProvince" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddressByCompany" Member="AddressByCompanies">
+    <Type Name="AddressByCompany">
+      <Column Name="AddrCom_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AddrCom_Address_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AddrCom_Address_Moo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddrCom_Address_Soi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddrCom_Address_Street" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrCom_Address_District" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCom_Address_Amphur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCom_Address_Province" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCom_Address_ZipCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCom_Telelphone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="AddrCom_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="AddrCom_CreateBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrCom_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddrCom_ModifyBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrCom_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCom_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCom_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="AddressByCompany_Employee" Member="Employees" ThisKey="AddrCom_Key" OtherKey="AddrCom_Key" Type="Employee" />
+      <Association Name="ThailandAmphur_AddressByCompany" Member="ThailandAmphur" ThisKey="AddrCom_Address_Amphur" OtherKey="Amp_Key" Type="ThailandAmphur" IsForeignKey="true" />
+      <Association Name="ThailandDistrict_AddressByCompany" Member="ThailandDistrict" ThisKey="AddrCom_Address_District" OtherKey="Dis_Key" Type="ThailandDistrict" IsForeignKey="true" />
+      <Association Name="ThailandProvince_AddressByCompany" Member="ThailandProvince" ThisKey="AddrCom_Address_Province" OtherKey="Prov_Key" Type="ThailandProvince" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddressByIDCard" Member="AddressByIDCards">
+    <Type Name="AddressByIDCard">
+      <Column Name="AddrIDCard_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AddrIDCard_Address_NO" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="AddrIDCard_Address_Moo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddrIDCard_Address_Soi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddrIDCard_Address_Street" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrIDCard_Address_District" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrIDCard_Address_Amphur" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrIDCard_Address_Province" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrIDCard_Address_ZipCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrIDCard_Telelphone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="AddrIDCard_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="AddrIDCard_CreateBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrIDCard_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddrIDCard_ModifyBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AddrIDCard_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrIDCard_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AddressByIDCard_Employee" Member="Employees" ThisKey="AddrIDCard_Key" OtherKey="AddrIDCard_Key" Type="Employee" />
+      <Association Name="ThailandAmphur_AddressByIDCard" Member="ThailandAmphur" ThisKey="AddrIDCard_Address_Amphur" OtherKey="Amp_Key" Type="ThailandAmphur" IsForeignKey="true" />
+      <Association Name="ThailandDistrict_AddressByIDCard" Member="ThailandDistrict" ThisKey="AddrIDCard_Address_District" OtherKey="Dis_Key" Type="ThailandDistrict" IsForeignKey="true" />
+      <Association Name="ThailandProvince_AddressByIDCard" Member="ThailandProvince" ThisKey="AddrIDCard_Address_Province" OtherKey="Prov_Key" Type="ThailandProvince" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Gender" Member="Genders">
+    <Type Name="Gender">
+      <Column Name="Gender_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Gender_Name" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="Gender_Employee" Member="Employees" ThisKey="Gender_Key" OtherKey="Gender_Key" Type="Employee" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employee" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="Emp_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StartDayWork" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="EmployeeID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Emp_Fname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Emp_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Emp_Surname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gender_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dept_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sec_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Brn_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fact_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Emp_REM" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Emp_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Emp_CreateBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Emp_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Emp_ModifyBy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Emp_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Emp_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrIDCard_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddrCont_Key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AddrCom_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Emp_Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Employee_HistoryWork" Member="HistoryWorks" ThisKey="Emp_Key" OtherKey="Emp_Key" Type="HistoryWork" />
+      <Association Name="Employee_HistorySickness" Member="HistorySicknesses" ThisKey="Emp_Key" OtherKey="Emp_Key" Type="HistorySickness" />
+      <Association Name="AddressByCompany_Employee" Member="AddressByCompany" ThisKey="AddrCom_Key" OtherKey="AddrCom_Key" Type="AddressByCompany" IsForeignKey="true" />
+      <Association Name="AddressByContact_Employee" Member="AddressByContact" ThisKey="AddrCont_Key" OtherKey="AddrCont_Key" Type="AddressByContact" IsForeignKey="true" />
+      <Association Name="AddressByIDCard_Employee" Member="AddressByIDCard" ThisKey="AddrIDCard_Key" OtherKey="AddrIDCard_Key" Type="AddressByIDCard" IsForeignKey="true" />
+      <Association Name="Branch_Employee" Member="Branch" ThisKey="Brn_Key" OtherKey="Brn_Key" Type="Branch" IsForeignKey="true" />
+      <Association Name="Dept_Employee" Member="Dept" ThisKey="Dept_Key" OtherKey="Dpt_Key" Type="Dept" IsForeignKey="true" />
+      <Association Name="EmployeeTitle_Employee" Member="EmployeeTitle" ThisKey="Title_Key" OtherKey="Title_Key" Type="EmployeeTitle" IsForeignKey="true" />
+      <Association Name="Factory_Employee" Member="Factory" ThisKey="Fact_Key" OtherKey="Fact_Key" Type="Factory" IsForeignKey="true" />
+      <Association Name="Gender_Employee" Member="Gender" ThisKey="Gender_Key" OtherKey="Gender_Key" Type="Gender" IsForeignKey="true" />
+      <Association Name="Section_Employee" Member="Section" ThisKey="Sec_Key" OtherKey="Sec_Key" Type="Section" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HistoryWork" Member="HistoryWorks">
+    <Type Name="HistoryWork">
+      <Column Name="Htw_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Emp_Key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Htw_CompanyName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htw_CompanyDept" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htw_Category" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htw_JobDescription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htw_StartDateForWork" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Htw_EndDateForWork" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Htw_Rem" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Htw_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Htw_CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htw_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Htw_ModifyBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htw_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htw_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HistoryWork_HistoryWork_Detail" Member="HistoryWork_Details" ThisKey="Htw_Key" OtherKey="Htw_Key" Type="HistoryWork_Detail" />
+      <Association Name="Employee_HistoryWork" Member="Employee" ThisKey="Emp_Key" OtherKey="Emp_Key" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HistoryWork_Detail" Member="HistoryWork_Details">
+    <Type Name="HistoryWork_Detail">
+      <Column Name="Htwd_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Htw_Key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Htwd_Factor" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htwd_Device" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htwd_Rem" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Htwd_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Htwd_CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htwd_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Htwd_ModifyBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htwd_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htwd_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HistoryWork_HistoryWork_Detail" Member="HistoryWork" ThisKey="Htw_Key" OtherKey="Htw_Key" Type="HistoryWork" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HistorySickness_Family" Member="HistorySickness_Families">
+    <Type Name="HistorySickness_Family">
+      <Column Name="Htsf_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Htsf_Relation" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htsf_Disease" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htsf_Rem" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Htsf_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Htsf_CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htsf_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Htsf_ModifyBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htsf_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htsf_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HistorySickness_HistorySickness_Family" Member="HistorySickness" ThisKey="Hts_Key" OtherKey="Hts_Key" Type="HistorySickness" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HistorySickness_SickInjury" Member="HistorySickness_SickInjuries">
+    <Type Name="HistorySickness_SickInjury">
+      <Column Name="Htss_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Htss_SicknessInjury" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Htss_OnYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htss_Rem" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Htss_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Htss_CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htss_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Htss_ModifyBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htss_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Htss_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Key" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HistorySickness_HistorySickness_SickInjury" Member="HistorySickness" ThisKey="Hts_Key" OtherKey="Hts_Key" Type="HistorySickness" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HistorySickness" Member="HistorySicknesses">
+    <Type Name="HistorySickness">
+      <Column Name="Hts_Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Hts_DiseaseChronic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hts_DiseaseChronic_Specify" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Hts_Sergery" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hts_Sergery_Specify" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Hts_Immunity" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hts_Immunity_Specify" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Hts_Family" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hts_Family_Specify" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Hts_Medicine" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hts_Medicine_Specify" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Hts_MedicineAllergic" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hts_MedicineAllergic_Specify" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Hts_Smoking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Smoking_PresentCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Smoking_QuitYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Smoking_QuitMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Somking_BeforeQuitCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Drinking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Drinking_QuitYear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Drinking_QuitMonth" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Addictive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Hts_Addictive_Specify" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Hts_Others" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Hts_Rem" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Hts_CreateDateTime" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="Hts_CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_ModifyDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Hts_ModifyBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hts_Del" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Emp_Key" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HistorySickness_HistorySickness_Family" Member="HistorySickness_Families" ThisKey="Hts_Key" OtherKey="Hts_Key" Type="HistorySickness_Family" />
+      <Association Name="HistorySickness_HistorySickness_SickInjury" Member="HistorySickness_SickInjuries" ThisKey="Hts_Key" OtherKey="Hts_Key" Type="HistorySickness_SickInjury" />
+      <Association Name="Employee_HistorySickness" Member="Employee" ThisKey="Emp_Key" OtherKey="Emp_Key" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
